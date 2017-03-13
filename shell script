@@ -1,0 +1,12 @@
+shell.sh的执行 shell.sh必须具备可读和可执行（rx）的权限。
+
+直接命令执行
+绝对路径       
+相对路径      当前目录就是shell所在的目录时   ./shell.sh
+变量PATH功能  将shell.sh放在PATH指定的目录内，例如~/bin/
+
+
+以bash进程来执行通过 bash shell.sh ，sh shell.sh来执行
+
+
+1.开头 #！/bin/bash
