@@ -1,2 +1,26 @@
 1.命令的执行命令太长跳行 \ENTER 就可以继续输出了
 2.变量的显示和设置 echo，unset
+
+
+
+
+3.数据流重定向
+标准输入stdin： 代码为0，使用<或《 
+标准输出stdout：代码为1，使用>或》
+标准错误输出stderr：代码为2，使用2>或2》
+
+
+《是以覆盖的方式输入
+<是以叠加的方式输入
+把正确和错误输出都写入同一个文件中 find /home -name .bashrc > list 2>&1
+                                find /home -name .bashrc &> list 
+                           
+4.命令执行的判断依据 ； ， && ||
+cmd；cmd；cmd 连续执行多个命令  
+cmd1&&cmd2 若cmd1执行完毕且正确执行，则开始执行cmd2   
+cmd1||cmd2 若cmd1执行完毕且为错误，则开始执行cmd2
+
+
+5.管道命令
+cut -d '分割字符' -f fields  （取出第几段）        cut -d   ‘：’ -f 5
+cut -c 字符范围                                   cut -c  12-
