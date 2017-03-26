@@ -1,8 +1,9 @@
 shell.sh的执行 shell.sh必须具备可读和可执行（rx）的权限。
 
 直接命令执行
-绝对路径       
-相对路径      当前目录就是shell所在的目录时   ./shell.sh
+绝对路径      sh shell.sh                     新开一个bash运行
+相对路径      当前目录就是shell所在的目录时   ./shell.sh  新开一个bash运行
+source        source shell.sh 在父进程中执行，变量在这个bash中可以使用
 变量PATH功能  将shell.sh放在PATH指定的目录内，例如~/bin/
 
 
@@ -10,3 +11,15 @@ shell.sh的执行 shell.sh必须具备可读和可执行（rx）的权限。
 
 
 1.开头 #！/bin/bash
+
+
+2.awk
+文件中有这样的数据：
+111 1 aaa 1 1 100 101
+222 2 bbb 2 2 200 202
+要计算出第七列减去第六列的值的总和，得到3
+awk '{x+=($7-$6)}END{print x}' file
+
+
+3.cut
+|cut -d ':' -f 3,5 以：为分隔符提取第三个和第五个
